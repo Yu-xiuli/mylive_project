@@ -1,11 +1,11 @@
 import Navigate from "@/components/navigate";
 
-const Dumpling = () => {
+const Travel = () => {
   return (
     <>
-      这是团子
+      旅行页面
     </>
   );
 };
 
-export default Dumpling;
+export default Travel;
