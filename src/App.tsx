@@ -1,10 +1,11 @@
-import { lazy, Suspense, useCallback } from "react";
+import { lazy, Suspense, useCallback, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { RouteItem, RouterList } from "@/router/index";
 import Navigate from "@/components/navigate";
 
 function App() {
+  const [activeNav, setActiveNav] = useState<string>("首页");
   const renderRoute = useCallback((routeParam: RouteItem) => {
     const Component = lazy(routeParam.ac);
     return (
@@ -25,13 +26,22 @@ function App() {
       <GlobalStyle />
       <div className="home_top">
         <div style={{ height: "40px" }} />
-        <div className="home_top_title">记录美好生活</div>
+        <div className="home_top_title">
+          <img src={require("@/imgs/home.jpg")} alt="" />
+          <span>记录生活</span>
+        </div>
       </div>
       <Router>
         <div className="home_bottom">
           <div className="home_left">
             {RouterList.map((item: RouteItem) => (
-              <Navigate key={item.path} url={item.path} title={item.title} />
+              <Navigate
+                key={item.path}
+                url={item.path}
+                title={item.title}
+                className={item.title === activeNav ? "is_active" : ""}
+                onChange={setActiveNav}
+              />
             ))}
           </div>
           <div className="home_content">
@@ -79,13 +89,23 @@ const HomeWrapper = styled.div`
 
     .home_top_title {
       height: 60px;
-      background-color: rgba(255, 255, 255, 0.9);
+      /* background-color: rgba(255, 255, 255, 0.9); */
       line-height: 60px;
       font-size: 28px;
       color: #2072bb;
       font-weight: bold;
       border-radius: 10px;
-      padding-left: 70px;
+      padding-left: 40px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+      span {
+        margin-left: 15px;
+      }
     }
   }
   .home_bottom {
@@ -97,10 +117,27 @@ const HomeWrapper = styled.div`
       display: flex;
       width: 120px;
       height: 100%;
-      padding-top: 20px;
       border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.9);
       flex-direction: column;
+
+      > div:not(:first-child) {
+        margin-top: 20px;
+      }
+      // active tab
+      .is_active {
+        position: relative;
+        color: rgb(255, 117, 0);
+        background-color: rgba(255, 117, 0, 0.2);
+        &::after {
+          content: "";
+          width: 21px;
+          height: 10px;
+          position: absolute;
+          right: -20px;
+          top: 21px;
+          background-color: rgba(255, 117, 0, 0.2);
+        }
+      }
     }
     .home_content {
       width: calc(100% - 120px);
