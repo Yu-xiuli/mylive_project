@@ -28,7 +28,7 @@ function App() {
         <div style={{ height: "40px" }} />
         <div className="home_top_title">
           <img src={require("@/imgs/home.jpg")} alt="" />
-          <span>记录生活</span>
+          <span>于平凡生活中记录美好</span>
         </div>
       </div>
       <Router>
@@ -75,6 +75,18 @@ const HomeWrapper = styled.div`
     }
   }
 
+  @media screen and (min-width: 1400px) {
+    .home_bottom {
+      width: 1300px !important;
+      height: 800px !important;
+      margin: auto;
+    }
+    .home_top {
+      width: 1300px !important;
+      margin: auto;
+    }
+  }
+
   @media screen and (max-height: 940px) {
     height: 1000px !important;
 
@@ -111,7 +123,7 @@ const HomeWrapper = styled.div`
   .home_bottom {
     width: 100%;
     height: calc(100vh - 100px);
-    padding: 6px 50px 100px 50px;
+    padding: 18px 50px 100px 50px;
     display: flex;
     .home_left {
       display: flex;
