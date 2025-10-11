@@ -88,7 +88,7 @@ const HomeWrapper = styled.div`
   }
 
   @media screen and (max-height: 940px) {
-    height: 1000px !important;
+    height: 940px !important;
 
     .home_bottom {
       height: 800px !important;

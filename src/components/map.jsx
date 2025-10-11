@@ -45,6 +45,25 @@ const Map = ({ style }) => {
         tooltip: {
           show: false,
         },
+        grid: {
+          show: true,
+          top: "0",
+          left: "0",
+          right: "0",
+          bottom: "0",
+          containLabel: true,
+        },
+        // title: {
+        //   text: "世界这么大，\n我要去看看🏃‍♂️",
+        //   padding: [25, 0, 0, 150],
+        //   textStyle: {
+        //     lineHeight: 20,
+        //     color: "#1b1b1b",
+        //     fontSize: 20,
+        //     fontWeight: 400,
+        //     fontFamily: "cursive",
+        //   },
+        // },
         geo: {
           // 地理坐标系组件，用于显示中国地图的地理位置信息
           map: "china",
@@ -54,6 +73,7 @@ const Map = ({ style }) => {
             },
           },
           roam: false, // 是否允许缩放和平移漫游
+          zoom:1.2,
           itemStyle: {
             normal: {
               areaColor: "#fdf9152d",
@@ -64,9 +84,6 @@ const Map = ({ style }) => {
               areaColor: "#fdf9155f",
             },
           },
-
-          // 开启多个选中
-          // selectedMode: "multiple",
           regions: defaultHighLightAreas,
         },
         series: [
@@ -112,9 +129,11 @@ const Map = ({ style }) => {
   return (
     <div
       ref={mapChartRef}
-      style={
-        style || { width: "600px", height: "400px", border: "1px solid red" }
-      }
+      style={{
+        width: "400px",
+        height: "300px",
+        ...(style || {}),
+      }}
     ></div>
   );
 };
