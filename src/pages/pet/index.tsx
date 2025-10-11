@@ -1,22 +1,23 @@
 import { Tabs } from "antd";
 import { useMemo } from "react";
 import styled from "styled-components";
+import Snowball from "./snowball";
 
 const Pet = () => {
   const tablist = useMemo(() => {
     return [
       {
-        label: "猫",
+        label: "雪球",
         key: "1",
-        children: "Content of Tab Pane 1",
+        children: <Snowball />,
       },
       {
-        label: "狗",
+        label: "团子",
         key: "2",
         children: "Content of Tab Pane 2",
       },
       {
-        label: "鱼",
+        label: "咪咪",
         key: "3",
         children: "Content of Tab Pane 3",
       },

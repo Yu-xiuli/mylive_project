@@ -78,7 +78,7 @@ const HomeWrapper = styled.div`
   @media screen and (min-width: 1400px) {
     .home_bottom {
       width: 1300px !important;
-      height: 800px !important;
+      height: 840px !important;
       margin: auto;
     }
     .home_top {
@@ -91,7 +91,7 @@ const HomeWrapper = styled.div`
     height: 940px !important;
 
     .home_bottom {
-      height: 800px !important;
+      height: 840px !important;
     }
   }
 
