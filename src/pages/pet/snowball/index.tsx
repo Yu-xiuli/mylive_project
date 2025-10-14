@@ -1,22 +1,8 @@
-import styled from "styled-components";
-// import PetCard from "@/components/petCard";
-
-interface SnowballListItem {
-  name: string;
-  img: string;
-  desc: string;
-  sizeStyle?: { width: string; height: string };
-  isBlack?: boolean;
-}
-
-interface SnowballList {
-  row: number;
-  list: SnowballListItem[];
-}
+import PetCard from "@/components/petCard";
+import { PetList } from "@/config/petConfig";
 
 // 卡片内容
-// 图片有三种尺寸，130*170、170*130、130*277
-const petInfo: SnowballList[] = [
+const petInfo: PetList[] = [
   {
     row: 1,
     list: [
@@ -103,7 +89,7 @@ const petInfo: SnowballList[] = [
       {
         name: "雪球",
         img: require("@/imgs/pet/snowball/pet_snowball_3.jpg"),
-        desc: "有一次快要睡着时听见门外的声音，老爸问狗子呢，老妈说在我旁边睡觉呢。天知道那刻真的很温馨。后来她出现意外离开了，我为此难过了许久。",
+        desc: "有一次快要睡着时听见门外的声音，老爸问狗子呢，老妈说在我旁边睡觉呢。天知道那刻真的很温馨。后来她出现意外离开了，我为此难过了许久。这个照片是带她回家的路上拍的，不知道她在想什么呢。",
         sizeStyle: { width: "95px", height: "177px" },
       },
     ],
@@ -130,62 +116,9 @@ const petInfo: SnowballList[] = [
 
 const Snowball = () => {
   return (
-    <ContainerWtapper>
-      {petInfo.map((info) => {
-        return (
-          <div className="snowball_card">
-            {info.list.map((item) =>
-              !item?.isBlack ? (
-                <div className="snowball_card_item">
-                  <img src={item.img} alt="" style={item?.sizeStyle || {}} />
-                  <div>{item.desc}</div>
-                </div>
-              ) : (
-                <div className="snowball_card_item_black" />
-              )
-            )}
-          </div>
-        );
-      })}
-      {/* <PetCard /> */}
-    </ContainerWtapper>
+    <PetCard petInfo={petInfo} />
   );
 };
 
 export default Snowball;
 
-const ContainerWtapper = styled.div`
-  font-size: 20px;
-  line-height: 24px;
-  font-family: cursive;
-  height: 610px;
-  overflow-y: scroll;
-
-  .snowball_card {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .snowball_card_item {
-      border: 1px solid #d9d9d9;
-      flex: 1;
-      height: 100%;
-      border-radius: 8px;
-      padding: 10px 7px 10px 10px;
-      text-indent: 40px;
-      img {
-        width: 120px;
-        height: 150px;
-        float: left;
-        margin: 0 10px 5px 0;
-      }
-    }
-    .snowball_card_item_black {
-      width: 20px;
-      height: 100%;
-    }
-  }
-`;

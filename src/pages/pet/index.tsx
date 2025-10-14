@@ -2,6 +2,7 @@ import { Tabs } from "antd";
 import { useMemo } from "react";
 import styled from "styled-components";
 import Snowball from "./snowball";
+import Dumpling from './dumpling'
 
 const Pet = () => {
   const tablist = useMemo(() => {
@@ -14,7 +15,7 @@ const Pet = () => {
       {
         label: "团子",
         key: "2",
-        children: "Content of Tab Pane 2",
+        children: <Dumpling/>,
       },
       {
         label: "咪咪",
