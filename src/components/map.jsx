@@ -28,7 +28,7 @@ const CommonAreaItemStyle = {
   },
 };
 
-const Map = ({ style }) => {
+const Map = ({ style = {} }) => {
   const mapChartRef = useRef();
 
   const defaultHighLightAreas = useMemo(() => {
@@ -46,7 +46,7 @@ const Map = ({ style }) => {
           show: false,
         },
         grid: {
-          show: true,
+          // show: true,
           top: "0",
           left: "0",
           right: "0",
@@ -73,7 +73,7 @@ const Map = ({ style }) => {
             },
           },
           roam: false, // 是否允许缩放和平移漫游
-          zoom:1.2,
+          zoom: 1.2,
           itemStyle: {
             normal: {
               areaColor: "#fdf9152d",

@@ -28,7 +28,7 @@ const CarouselSlide = styled.div`
   background-size: cover;
   background-position: center;
   opacity: ${(props) => (props.active ? 1 : 0)};
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
   cursor: pointer;
 `;
 
@@ -41,7 +41,7 @@ const CarouselSlideInfo = styled.div`
   padding-left: 20px;
   border: 1px solid red;
   opacity: ${(props) => (props.active ? 1 : 0)};
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
   display: flex;
   align-items: center;
   line-height: 24px;
