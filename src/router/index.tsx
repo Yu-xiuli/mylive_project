@@ -14,7 +14,7 @@ export const RouterList: RouteItem[] = [
     ac: () => import("@/pages/home"),
   },
   {
-    title: "爱宠",
+    title: "宠物",
     path: PET,
     ac: () => import("@/pages/pet"),
     // routes: [

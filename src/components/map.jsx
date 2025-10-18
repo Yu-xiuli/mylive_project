@@ -55,13 +55,20 @@ const Map = ({ style = {} }) => {
         },
         // title: {
         //   text: "世界这么大，\n我要去看看🏃‍♂️",
-        //   padding: [25, 0, 0, 150],
+        //   padding: [0, 20, 100, 0],
         //   textStyle: {
         //     lineHeight: 20,
         //     color: "#1b1b1b",
         //     fontSize: 20,
         //     fontWeight: 400,
         //     fontFamily: "cursive",
+        //     // 设置文字从右到左排版
+        //     writingMode: "vertical-rl",
+        //     // 设置文字垂直
+        //     textOrientation: "upright",
+
+        //     //         writing-mode: vertical-rl;
+        //     // text-orientation: upright;
         //   },
         // },
         geo: {
@@ -130,8 +137,8 @@ const Map = ({ style = {} }) => {
     <div
       ref={mapChartRef}
       style={{
-        width: "400px",
-        height: "300px",
+        width: "350px",
+        height: "230px",
         ...(style || {}),
       }}
     ></div>

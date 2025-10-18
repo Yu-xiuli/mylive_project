@@ -1,12 +1,25 @@
-import { lazy, Suspense, useCallback, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { RouteItem, RouterList } from "@/router/index";
 import Navigate from "@/components/navigate";
+import { useMemoizedFn } from "ahooks";
 
 function App() {
-  const [activeNav, setActiveNav] = useState<string>("首页");
-  const renderRoute = useCallback((routeParam: RouteItem) => {
+  const [activeNav, setActiveNav] = useState<string>("");
+
+
+  // 刷新时，获取当前路由，定位到对应页面
+  useEffect(() => {
+    const webLocation = window.location.pathname || "/";
+    const curNav = RouterList.find(
+      (item: RouteItem) => item.path === webLocation
+    )?.title;
+
+    setActiveNav(curNav || "首页");
+  }, [setActiveNav]);
+
+  const renderRoute = useMemoizedFn((routeParam: RouteItem) => {
     const Component = lazy(routeParam.ac);
     return (
       <Route
@@ -19,7 +32,7 @@ function App() {
         }
       />
     );
-  }, []);
+  });
 
   return (
     <HomeWrapper>

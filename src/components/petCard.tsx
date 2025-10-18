@@ -42,7 +42,7 @@ const ContainerWtapper = styled.div`
     align-items: center;
     justify-content: center;
     .snowball_card_item {
-      border: 1px solid #d9d9d9;
+      border: 1px solid #d7d7d7;
       flex: 1;
       height: 100%;
       border-radius: 8px;
