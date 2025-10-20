@@ -8,7 +8,6 @@ import { useMemoizedFn } from "ahooks";
 function App() {
   const [activeNav, setActiveNav] = useState<string>("");
 
-
   // 刷新时，获取当前路由，定位到对应页面
   useEffect(() => {
     const webLocation = window.location.pathname || "/";

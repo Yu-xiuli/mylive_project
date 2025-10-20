@@ -27,14 +27,13 @@ const Pet = () => {
   }, []);
 
   return (
-    <ContainerWtapper>
-      <Tabs
-        defaultActiveKey="1"
-        items={tablist}
-        onChange={() => {}}
-        type="card"
-      />
-    </ContainerWtapper>
+      <ContainerWtapper>
+        <Tabs
+          defaultActiveKey="1"
+          items={tablist}
+          type="card"
+        />
+      </ContainerWtapper>
   );
 };
 

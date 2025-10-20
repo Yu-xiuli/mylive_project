@@ -34,17 +34,21 @@ const Home = () => {
   return (
     <HomeContainer>
       <div className="home_pics">
-        <div className={"home_content_box"}>
+        <div className={"home_content_pics"}>
           <Carousel images={images} autoPlay={true} interval={4000} />
         </div>
         <div className={"home_content_center"}>
-          <dt>美好不是一场需要盛装出席的盛宴，而是一种专注的凝视。</dt>
-          <dt>当你愿意为一片云的形状驻足，为一句寻常的关怀感动，</dt>
+          <dt>美好不是一场需要盛装出席的盛宴，</dt>
+          <dt>而是一种专注的凝视。</dt>
+          <dt>当你愿意为一片云的形状驻足，</dt>
+          <dt>为一句寻常的关怀感动，</dt>
           <dt>生活便会向你展现它最朴素也最珍贵的质地——</dt>
-          <dt>如同掌心里一块被体温捂暖的卵石，不耀眼，却实在、恒久。</dt>
-          <dt>记录它们，或许是我对平淡生活最温柔的反抗。</dt>
+          <dt>如同掌心里一块被体温捂暖的卵石，</dt>
+          <dt>不耀眼，却实在、恒久。</dt>
+          <dt>记录它们，</dt>
+          <dt>或许是我对平淡生活最温柔的反抗。</dt>
         </div>
-        <div className={"home_content_box"}></div>
+        {/* <div className={"home_content_box"}></div> */}
       </div>
       {/* <Map style={{ marginTop: "180px" }} />
       <div className="home_pics">
@@ -69,14 +73,18 @@ const HomeContainer = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+
+    .home_content_pics {
+      width: 100%;
+      height: 234px;
+    }
     .home_content_box {
       flex: 1;
       border: 1px solid blue;
     }
     .home_content_center {
       width: 100%;
-      height: 190px;
-      padding: 15px 0;
+      padding: 103px 0 15px 0;
       font-size: 20px;
       line-height: 24px;
     }
